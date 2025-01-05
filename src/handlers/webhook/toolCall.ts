@@ -11,7 +11,7 @@ export const toolCallHandler = async (payload: any) => {
     } = toolCall;
 
     switch (name) {
-      case "checkInfo":
+      case "checkOrderStatus":
         return await checkOrderStatus({
           toolCallparameters,
         });
