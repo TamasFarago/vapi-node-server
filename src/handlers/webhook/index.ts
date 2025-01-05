@@ -2,7 +2,10 @@ import { Request, Response } from "express";
 import { VapiPayload, VapiWebhookEnum } from "../types/vapi.types";
 import { toolCallHandler } from "./toolCall";
 
-export const webhookHandler = async (req: Request, res: Response) => {
+export const webhookHandler = async (
+  req: Request,
+  res: Response
+): Promise<any> => {
   try {
     const payload = req.body.message as VapiPayload;
     switch (payload.type) {
