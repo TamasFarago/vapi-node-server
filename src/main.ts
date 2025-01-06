@@ -1,7 +1,7 @@
 import express, { json } from "express";
 import cors from "cors";
-import { router } from "./router";
 import bodyParser from "body-parser";
+import { webhookHandler } from "./handlers/webhook";
 
 const host = "localhost";
 const port = 8080;
@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
   res.send({ message: "Hello API" });
 });
 
-app.use("/api", router);
+app.post("/webhook", webhookHandler);
 
 app.listen(port, host, () => {
   console.log(`[ ready ] http://${host}:${port}`);
