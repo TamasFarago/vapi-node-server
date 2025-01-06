@@ -1,6 +1,5 @@
 import express, { json } from "express";
 import cors from "cors";
-import { router } from "./router";
 import bodyParser from "body-parser";
 import { webhookHandler } from "./handlers/webhook";
 
